@@ -5,8 +5,7 @@
     //Obteniendo hora Actual
     $horaActual = time();
 
-    //imprimir fechaActual
-    echo $fechaActual;
-    //imprimir horaActual
-    echo $horaActual;
+    //imprimir fechaActual y hora actual
+    echo $fechaActual ."<br>". $horaActual;
+
 ?>
