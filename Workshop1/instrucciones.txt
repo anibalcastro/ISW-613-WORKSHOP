@@ -1,0 +1,12 @@
+
+- Install XAMP or similar, you will need a Web Server and PHP (ready)
+
+- Create a php file that prints the current date and time. (ready)
+
+- Create an html (no javascript) file to shows the current date and time.
+
+- Put both files in the document root of a web server (apache) or you can use the embeded php web server (> php -S localhost:8080)
+
+- Now reload each page and notice the results. 
+
+- Push your code to your git repo under a folder called Workshop 1 and submit in this workshop the URL of the repo. (ready)
