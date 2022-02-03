@@ -1,0 +1,22 @@
+
+
+html{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+/*Darle estilo al encabezado*/
+.encabezado{
+    border: 1px solid #000000;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: steelblue;
+    flex-direction: column;
+    width: 650px;
+    height: 235px;
+}

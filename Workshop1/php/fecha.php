@@ -1,4 +1,16 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP</title>
+    <link rel="stylesheet" href="/Workshop1/css/index.css">
+</head>
+
+<body>
+<div class="encabezado">
+    <?php
 
     //Obtiene fecha
     function obtenerFecha(){
@@ -8,7 +20,7 @@
 
         return $fechaActual;
     }
-    
+
     //Obtener hora
     function obtenerHora(){
         //variable almacena hora
@@ -18,9 +30,18 @@
     }
 
 
+    
     $fecha = obtenerFecha();
     $hora = obtenerHora();
+    
     //imprimir fechaActual y hora actual
-    echo "<p>La fecha actual es: </p>", $fecha,"<br>", "<p>La Hora actual es:</p>", $hora;
+    echo "<h2>La fecha actual es: </h2>", $fecha, "<h2>La Hora actual es:</h2>", $hora;
+    
+    ?>
+    </div>
+</body>
+</html>
 
-?>
+
+
+
