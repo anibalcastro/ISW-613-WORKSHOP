@@ -12,30 +12,15 @@
 <div class="encabezado">
     <?php
 
-    //Obtiene fecha
-    function obtenerFecha(){
-        //variable almacena fecha
-        date_default_timezone_set("America/Costa_Rica");
-        $fechaActual = date("F j, Y");
-
-        return $fechaActual;
-    }
-
-    //Obtener hora
-    function obtenerHora(){
-        //variable almacena hora
-        $horaActual = date("h:i:s a");
-
-        return $horaActual;
-    }
-
-
-    
-    $fecha = obtenerFecha();
-    $hora = obtenerHora();
+    //zona horaria
+    date_default_timezone_set("America/Costa_Rica");
+    //variable almacena fecha
+    $fechaActual = date("F j, Y");
+    //variable almacena hora
+    $horaActual = date("h:i:s a");
     
     //imprimir fechaActual y hora actual
-    echo "<h2>La fecha actual es: </h2>", $fecha, "<h2>La Hora actual es:</h2>", $hora;
+    echo "<h2>La fecha actual es: </h2>", $fechaActual, "<h2>La Hora actual es:</h2>", $horaActual;
     
     ?>
     </div>
