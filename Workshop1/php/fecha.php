@@ -20,7 +20,7 @@
     $horaActual = date("h:i:s a");
     
     //imprimir fechaActual y hora actual
-    echo "<h2>La fecha actual es: </h2>", $fechaActual, "<h2>La Hora actual es:</h2>", $horaActual;
+    echo "<h2>La Fecha actual es: </h2>", $fechaActual, "<h2>La Hora actual es:</h2>", $horaActual;
     
     ?>
     </div>
