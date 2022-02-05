@@ -1,10 +1,14 @@
 
-
+/*Color blanco las letras
+Contenedor centrado
+Fondo color negro*/
 html{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
+    color: white;
+    background-color: #1b1b22;
 }
 
 
@@ -19,4 +23,8 @@ html{
     flex-direction: column;
     width: 650px;
     height: 235px;
+}
+
+p{
+    font-size: large;
 }
