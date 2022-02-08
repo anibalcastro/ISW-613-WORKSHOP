@@ -11,4 +11,6 @@
 
 - Push your code to your git repo under a folder called Workshop 1 and submit in this workshop the URL of the repo. (ready)
 
-Esta conectada a git
+/***********/
+
+Trabajo completado
