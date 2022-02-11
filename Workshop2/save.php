@@ -10,8 +10,12 @@ if($_POST['firstName'].$_POST['lastName'].$_POST['email'].$_POST['province'].$_P
   //print_r($_REQUEST);
 
   //get each field and insert to the database
+  if ($_POST['firstName']!=null){
+    
+    saveUser($_REQUEST);
+  }
 
-  saveUser($_REQUEST);
+  
 }
 
 
