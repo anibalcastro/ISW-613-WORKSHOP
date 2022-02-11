@@ -72,6 +72,8 @@ if($_POST['firstName'].$_POST['lastName'].$_POST['email'].$_POST['province'].$_P
           ?>
       </table>
     </div>  
+          
+    <button type="submit" class="btn btn-primary" onclick="location='http://utnweb.com/web2/ISW-613-WORKSHOP/Workshop2/'"> Regresar </button>
 
   </div>
   
