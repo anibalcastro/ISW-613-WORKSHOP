@@ -24,7 +24,7 @@ function saveUser($user){
   $sql = "INSERT INTO customers VALUES ('$firstName', '$lastName', '$emailAdress', '$province', '$password')";
 
   mysqli_query($connection, $sql);
-  echo 'Cliente Agregado';
+  echo '<script language="javascript">alert("Cliente Agregado");</script>';
 
 }
 /*
