@@ -6,12 +6,11 @@ include('functions.php');
 
 if($_POST['firstName'].$_POST['lastName'].$_POST['email'].$_POST['province'].$_POST['password']) {
 
-  //iteraciones
-  //print_r($_REQUEST);
+  //imprimir el último registro
+  print_r($_REQUEST);
 
   //get each field and insert to the database
   if ($_POST['firstName']!=null){
-    
     saveUser($_REQUEST);
   }
 
@@ -49,12 +48,12 @@ if($_POST['firstName'].$_POST['lastName'].$_POST['email'].$_POST['province'].$_P
           <th scope="col">Province</th>
         </tr>
         <?php
+          //consulta para traer todos los datos
           $sql = "SELECT * FROM customers";
+          //establecemos conexión y pasamos la consulta
           $data = mysqli_query($conexion, $sql);
-
+          //la variable $users se transoforma en un array de todos los datos de la bd
           while($users=mysqli_fetch_array($data)){
-
-          
         ?>
         <tr>
           <td><?php echo $users['firstName']?></td>
@@ -63,20 +62,21 @@ if($_POST['firstName'].$_POST['lastName'].$_POST['email'].$_POST['province'].$_P
           
           <td>
           <?php 
-
+          //provincias en un array
           $provinces =array(55 => 'Alajuela', 56 => 'San Jose', 57 => 'Cartago', 80 => 'Heredia', 90 => 'Limon', 100 => 'Puntarenas', 200 => 'Guanacaste');
-
+          //obtiene la llave y devuelve el nombre de la provincia.  
           $resultadoProvincia = $provinces[$users['province']];
           echo $resultadoProvincia
           ?>
           </td>
         </tr>
           <?php 
+            //cierra el ciclo where
             }
           ?>
       </table>
     </div>  
-          
+    <!-Redirecciona al index.php-> 
     <button type="submit" class="btn btn-primary" onclick="location='http://utnweb.com/web2/ISW-613-WORKSHOP/Workshop2/'"> Regresar </button>
 
   </div>
