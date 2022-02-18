@@ -1,13 +1,13 @@
 <?php
   if($_POST) {
-    $name = $_REQUEST['name'];
-    $lastname = $_REQUEST['lastname'];
-    $username = $_REQUEST['username'];
+    $nombre = $_REQUEST['nameCategory'];
+    $descripcion = $_REQUEST['descriptionCategory'];
+   
 
-    $sql = "INSERT INTO users(`username`, `name`, `lastname`) VALUES ('$username','$name', '$lastname')";
-    $connection = mysqli_connect('localhost:3306', 'root', 'root1234', 'php_web2');
+    $sql = "INSERT INTO categories(`nombre`, `descripcion`) VALUES ('$nombre','$descripcion')";
+    $connection = mysqli_connect('127.0.0.1','root','','workshop3');
     mysqli_query($connection, $sql);
-    header('Location: /index.php?status=success&message=User was created');
+    header('Location: /index1.php?status=success&message=User was created');
   } else {
-    header('Location: /index.php?status=error&message=There was an error');
+    header('Location: /index1.php?status=error&message=There was an error');
   }

@@ -25,7 +25,7 @@
     <form action="signup.php" method="POST" class="form-inline" role="form">
       <div class="form-group">
         <label class="sr-only" for="">Username</label>
-        <input type="text" class="form-control" name="username" placeholder="Your username" value="<?php echo $name?> >
+        <input type="text" class="form-control" name="username" placeholder="Your username" value="<?php echo $name ?> >
       </div>
       <div class="form-group">
         <label class="sr-only" for="">Name</label>

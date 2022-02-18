@@ -3,14 +3,14 @@
   $message = "";
   if(!empty($_REQUEST['status'])) {
     $message = $_REQUEST['message'];
-    // switch($_REQUEST['status']) {
-    //   case 'success':
-    //     $message = 'User was added succesfully';
-    //   break;
-    //   case 'error':
-    //     $message = 'There was a problem inserting the user';
-    //   break;
-    // }
+     switch($_REQUEST['status']) {
+       case 'success':
+         $message = 'User was added succesfully';
+         break;
+       case 'error':
+        $message = 'There was a problem inserting the user';
+        break;
+      }
   }
 ?>
 
