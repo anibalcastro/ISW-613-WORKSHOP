@@ -1,0 +1,8 @@
+Usando el ejemplo visto en clase (https://github.com/barroyo/isw-613/tree/master/weeks/week4/) desarrolle las funciones para:
+
+1. Crear Categorias ( con los siguientes datos: Nombre, Descripción) 
+
+2. Listar las Categorias
+
+3. Eliminar una categoria.
+
