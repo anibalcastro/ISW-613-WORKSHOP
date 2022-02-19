@@ -4,6 +4,10 @@
   $connection = new mysqli('127.0.0.1','root','','workshop3');
   $result = $connection->query($sql);
   $users = $result->fetch_all();
+
+  function funcion1($id){
+    echo 'El id es:'.$id;
+  }
 ?>
 
 
@@ -33,7 +37,7 @@
         <?php
           // loop users
           foreach($users as $user) {
-            echo "<tr><td>".$user[0]."</td><td>".$user[1]."</td><td>".$user[2]."</td><td><a href=\"edit.php?id=".$user[0]."\">Edit</a> |  Delete  </td></tr>";
+            echo "<tr><td>".$user[0]."</td><td>".$user[1]."</td><td>".$user[2]."</td><td><a href=\"edit.php?id=".$user[0]."\">Edit</a> |  <button onclick=".funcion1($user[0]);"> delete </buton>  </td></tr>";
           }
         ?>
       </tbody>
