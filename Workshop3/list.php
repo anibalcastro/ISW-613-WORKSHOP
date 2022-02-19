@@ -5,9 +5,15 @@
   $result = $connection->query($sql);
   $users = $result->fetch_all();
 
-  function funcion1($id){
-    echo 'El id es:'.$id;
+  function sqlEliminar($id){
+   
   }
+
+  function redireccionar($id){
+    $file = 'http://utnweb.com/web2/ISW-613-WORKSHOP/Workshop3/edit.php?id='.$id;
+    header("Location:".$file);
+  }
+
 ?>
 
 
@@ -23,6 +29,11 @@
 
   <title>Document</title>
 </head>
+<style>
+  h1{
+    margin-top: 50px;
+  }
+</style>
 <body>
 <div class="container">
   <?php require ('header.php') ?>
@@ -32,12 +43,26 @@
         <th>ID</th>
         <th>Name</th>
         <th>Description</th>
+        <th>Actions</th>
       </tr>
       <tbody>
         <?php
           // loop users
           foreach($users as $user) {
-            echo "<tr><td>".$user[0]."</td><td>".$user[1]."</td><td>".$user[2]."</td><td><a href=\"edit.php?id=".$user[0]."\">Edit</a> |  <button onclick=".funcion1($user[0]);"> delete </buton>  </td></tr>";
+        ?>
+            <tr>
+            <td><?php echo "$user[0]"?></td>
+            <td><?php echo "$user[1]"?></td>
+            <td><?php echo "$user[2]"?></td>
+            <td> 
+            <button class="btn btn-link" <?php echo " onclick=".redireccionar($user[0]);""?>>Edit</button>"
+           
+            <?php echo "|"?>
+            
+              <button class="btn btn-link" <?php echo " onclick=".sqlEliminar($user[0]);""?>>Delete</button>
+            </td>
+            </tr>
+        <?php
           }
         ?>
       </tbody>
