@@ -1,10 +1,12 @@
 <?php
   // get all users from the database
-  $sql = 'SELECT * FROM users';
-  $connection = new mysqli('localhost:3306', 'root', 'root1234', 'php_web2');
+  $sql = 'SELECT * FROM categories';
+  $connection = new mysqli('127.0.0.1','root','','workshop3');
   $result = $connection->query($sql);
   $users = $result->fetch_all();
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,19 +22,18 @@
 <body>
 <div class="container">
   <?php require ('header.php') ?>
-  <h1>List of Users</h1>
+  <h1>List of Categories</h1>
     <table class="table table-light">
       <tr>
+        <th>ID</th>
         <th>Name</th>
-        <th>Lastname</th>
-        <th>Username</th>
-        <th>Actions</th>
+        <th>Description</th>
       </tr>
       <tbody>
         <?php
           // loop users
           foreach($users as $user) {
-            echo "<tr><td>".$user[0]."</td><td>".$user[1]."</td><td>".$user[2]."</td><td><a href=\"edit.php?id=".$user[4]."\">Edit</a> | Delete</td></tr>";
+            echo "<tr><td>".$user[0]."</td><td>".$user[1]."</td><td>".$user[2]."</td><td><a href=\"edit.php?id=".$user[0]."\">Edit</a> |  Delete  </td></tr>";
           }
         ?>
       </tbody>
