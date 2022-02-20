@@ -5,15 +5,6 @@
   $result = $connection->query($sql);
   $users = $result->fetch_all();
 
-  function sqlEliminar($id){
-   
-  }
-
-  function redireccionar($id){
-    $file = 'http://utnweb.com/web2/ISW-613-WORKSHOP/Workshop3/edit.php?id='.$id;
-    header("Location:".$file);
-  }
-
 ?>
 
 
@@ -54,12 +45,10 @@
             <td><?php echo "$user[0]"?></td>
             <td><?php echo "$user[1]"?></td>
             <td><?php echo "$user[2]"?></td>
-            <td> 
-            <button class="btn btn-link" <?php echo " onclick=".redireccionar($user[0]);""?>>Edit</button>"
-           
-            <?php echo "|"?>
-            
-              <button class="btn btn-link" <?php echo " onclick=".sqlEliminar($user[0]);""?>>Delete</button>
+            <td> <form action="delete.php" method="post">
+            <input type='hidden' name='idCategories' value='<?php echo "$user[0]" ?>'>
+            <input type="submit" value='Eliminar'>
+            </form>
             </td>
             </tr>
         <?php
