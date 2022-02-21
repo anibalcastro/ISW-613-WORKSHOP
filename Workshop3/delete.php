@@ -4,7 +4,6 @@
 
 
     if (isset($_POST["idCategories"])){
-
         //asignamos lo que viene en idCategorias a $id_Eliminar
         $id_eliminar = $_POST["idCategories"];
      
