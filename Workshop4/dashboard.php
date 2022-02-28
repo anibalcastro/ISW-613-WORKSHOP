@@ -8,9 +8,9 @@ if (!$user) {
 }
 
 $nombreUsuario = "";
-  if(!empty($_REQUEST['status'])) {
-    $nombreUsuario = $_REQUEST['message'];
-  }
+if(!empty($_REQUEST['status'])) {
+  $nombreUsuario = $_REQUEST['message'];
+}
 
 require('functions.php');
 

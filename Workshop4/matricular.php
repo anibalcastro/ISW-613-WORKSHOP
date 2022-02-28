@@ -11,4 +11,4 @@ $conn = mysqli_connect('127.0.0.1','root','','workshop4');
 
 mysqli_query($conn, $sql);
 
-header('location: matricula.php');
+header('location: "http://utnweb.com/web2/ISW-613-WORKSHOP/Workshop4/matricula.php"');
