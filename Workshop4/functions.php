@@ -80,7 +80,7 @@ function createUser($name, $identificacion,$email, $password)
 {
   $connection = mysqli_connect('127.0.0.1','root','','workshop4');
   
-  $sql = "INSERT INTO `users`( `name`, `email`, `contrasenna`) VALUES ('$name','$identificacion','$email',$password);";
+  $sql = "INSERT INTO users( `name`,`identificacion`, `email`, `contrasenna`) VALUES ('$name','$identificacion','$email',$password);";
   mysqli_query($connection, $sql);
   header('Location: index.php');
 
