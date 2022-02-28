@@ -60,11 +60,23 @@ function authenticate($email, $password){
   // si viene lleno, cierra conexión y retorna el resultado.
   else{
     mysqli_close($connection);
-    $row = $result -> fetch_array(MYSQLI_ASSOC);
-    $nombre =$row["name"];
-    return $nombre;
+    $iterador = $result -> fetch_array(MYSQLI_ASSOC);
+    //nombre
+    $nombreCompleto = $iterador["name"];
+    //rol
+    $rol = $iterador["rol"];
+    
+    $arrayInfo = [
+      "nombre" => $nombreCompleto,
+      "rol" => $rol,
+      "resultado" => $result
+    ];
+
+    return $arrayInfo;
   }
 }
+
+
 
 /**
  *
