@@ -11,10 +11,10 @@
     if ($usuario){
       session_start();
       $_SESSION['user'] = $usuario;
-      header('Location: dashboard.com');
+      header('Location: http://utnweb.com/web2/ISW-613-WORKSHOP/Workshop4/dashboard.php');
     }
     else{
-      header('Location: index.php?status=login');
+      header('Location: http://utnweb.com/web2/ISW-613-WORKSHOP/Workshop4/index.php?status=login');
     }
   }
 
