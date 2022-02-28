@@ -26,11 +26,11 @@ $matriculas = getMatriculas();
     <a href="/index.php">Nuevo</a>
     <table class="table table-light">
       <tr>
+        <th>Id</th>
         <th>Name</th>
-        <th>Lastname</th>
         <th>Email</th>
         <th>Carrera</th>
-        <th>Actions</th>
+        
       </tr>
       <tbody>
         <?php

@@ -1,60 +1,67 @@
+
 <?php
+  session_start();
+  if ($_SESSION && $_SESSION['user']){
+    //user already logged in
+    header('Location: dashboard.php');
+  }
 
-require('functions.php');
-
-
-$carreras = getCarreras();
-
+  $message = "";
+  if(!empty($_REQUEST['status'])) {
+    switch($_REQUEST['status']) {
+      case 'login':
+        $message = 'User does not exists';
+      break;
+      case 'error':
+        $message = 'There was a problem inserting the user';
+      break;
+    }
+  }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matricula</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="/Workshop4/css/sesion.css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
+  <title>Document</title>
 </head>
+
+
 <body>
-  <div class="container-fluid">
-    <div class="jumbotron">
-      <h1 class="display-4">Matricula</h1>
-      <p class="lead">Proceso de matricula</p>
-      <hr class="my-4">
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="https://static.vecteezy.com/system/resources/previews/002/318/271/non_2x/user-profile-icon-free-vector.jpg" id="icon" alt="User Icon" />
+        <h1>Login</h1>
+      </div>
+
+      <!-- Login Form -->
+      <form>
+        <input type="text" id="email" class="fadeIn second" name="email" placeholder="Email">
+        <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password">
+        <input type="submit" class="fadeIn fourth" value="Log In">
+      </form>
+
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Create user.</a>
+      </div>
+
     </div>
-    <a href="/matricula.php">Ver todas</a>
-    <form method="post" action="matricular.php">
-      <div class="form-group">
-        <label for="first-name">First Name</label>
-        <input id="first-name" class="form-control" type="text" name="firstName">
-      </div>
-      <div class="form-group">
-        <label for="last-name">Last Name</label>
-        <input id="last-name" class="form-control" type="text" name="lastName">
-      </div>
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input id="email" class="form-control" type="text" name="email">
-      </div>
-      <div class="form-group">
-        <label for="carrera">Carrera</label>
-        <select id="carrera" class="form-control" name="career">
-          <?php
-
-          foreach($carreras as $carrera) {
-            echo "<option value=\"".$carrera['id']."\">".$carrera['name']."</option>";
-          }
-          ?>
-        </select>
-      </div>
-
-      <button type="submit" class="btn btn-primary"> Matricular </button>
-
-    </form>
   </div>
-
 </body>
+
 
 </html>

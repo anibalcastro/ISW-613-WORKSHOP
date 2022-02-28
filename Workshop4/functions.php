@@ -4,7 +4,7 @@
  *
  */
 function getCarreras(){
-  $connection = mysqli_connect('localhost:3306', 'root', 'root1234', 'php_web2');
+  $connection = mysqli_connect('127.0.0.1','root','','workshop4');
 
   $query = 'SELECT * from careers';
   $result = mysqli_query($connection, $query);
@@ -16,19 +16,18 @@ function getCarreras(){
  * Obtiene una matricula desde la base de datos
  */
 function getMatriculaById($id){
-  $connection = mysqli_connect('localhost:3306', 'root', 'root1234', 'php_web2');
+  $connection = mysqli_connect('127.0.0.1','root','','workshop4');
 
   $query = "SELECT * from matricula WHERE id = $id";
   $result = mysqli_query($connection, $query);
   return $result->fetch_assoc();
 }
 
-
 /**
  *
  */
 function getMatriculas(){
-  $connection = mysqli_connect('localhost:3306', 'root', 'root1234', 'php_web2');
+  $connection = mysqli_connect('127.0.0.1','root','','workshop4');
 
   $query = 'SELECT matricula.*, careers.name as careerName
             FROM matricula JOIN careers ON matricula.careerId = careers.id';
@@ -43,11 +42,11 @@ function getMatriculas(){
  * por medio del $email y $password
  */
 function authenticate($email, $password){
-  //falta colocar datos
-  $connection = mysqli_connect('localhost:3306', 'root', 'root1234', 'php_web2');
+ 
+  $connection = mysqli_connect('127.0.0.1','root','','workshop4');
 
   //consulta para saber existencia
-  $sqlUsuarios = "SELECT * FROM users WHERE  `username` = '$username' AND `password` = '$password'";
+  $sqlUsuarios = "SELECT * FROM users WHERE  `email` = '$email' AND `contrasenna` = '$password'";
 
   //resultado si el existe o no
   $result = mysqli_query($connection, $sqlUsuarios);
@@ -62,4 +61,16 @@ function authenticate($email, $password){
     mysqli_close($connection);
     return $result->fetch_array();
   }
+}
+
+/**
+ *
+ */
+function getUsers(){
+  $connection = mysqli_connect('127.0.0.1','root','','workshop4');
+
+  $query = 'SELECT * from users';
+  $result = mysqli_query($connection, $query);
+  $users = $result->fetch_all(MYSQLI_ASSOC);
+  return $users;
 }
