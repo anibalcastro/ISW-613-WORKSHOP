@@ -23,7 +23,7 @@ $matriculas = getMatriculas();
       <hr class="my-4">
     </div>
 
-    <a href="/index.php">Nuevo</a>
+    <a href="/dashboard.php">Nuevo</a>
     <table class="table table-light">
       <tr>
         <th>Id</th>
@@ -36,7 +36,12 @@ $matriculas = getMatriculas();
         <?php
           // loop matriculas
           foreach($matriculas as $matricula) {
-            echo "<tr><td>".$matricula['firstName']."</td><td>".$matricula['lastName']."</td><td>".$matricula['email']."</td><td><a href=\"verCarrera.php?id=".$matricula['careerId']."\">".$matricula['careerName']."</a></td><td><a href=\"editarMatricula.php?id=".$matricula['id']."\">Edit</a> | <a href=\"eliminarMatricula.php?id=".$matricula['id']."\">Delete</a></td></tr>";
+            echo "<tr> 
+            <td>".$matricula['id']."</td>
+            <td>".$matricula['name']."</td>
+            <td>".$matricula['email']."</td>
+            <td>".$matricula['career']."</td>
+            </tr>";
           }
         ?>
       </tbody>

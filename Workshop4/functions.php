@@ -29,8 +29,9 @@ function getMatriculaById($id){
 function getMatriculas(){
   $connection = mysqli_connect('127.0.0.1','root','','workshop4');
 
-  $query = 'SELECT matricula.*, careers.name as careerName
-            FROM matricula JOIN careers ON matricula.careerId = careers.id';
+  $query = "SELECT matricula.id ,users.name, users.email, careers.name as career FROM matricula \n"
+  . "INNER JOIN careers ON matricula.careerId = careers.id \n"
+  . "INNER JOIN users ON matricula.userId = users.id;";
   $result = mysqli_query($connection, $query);
   $matriculas = $result->fetch_all(MYSQLI_ASSOC);
   return $matriculas;
