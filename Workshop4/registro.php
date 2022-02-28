@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <link rel="stylesheet" href="/Workshop4/css/sesion.css">
+  <?php echo "<link rel=stylesheet href=index.css>"; ?>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!------ Include the above in your HEAD tag ---------->
-  <title>Document</title>
+  <title>Register</title>
 </head>
 
 
@@ -26,11 +26,11 @@
       </div>
 
       <!-- Login Form -->
-      <form>
+      <form action="registrar.php" method="POST">
         <input type="text" id="name" class="fadeIn first" name="name" placeholder="Complete name">
         <input type="text" id="id" class="fadeIn second" name="id" placeholder="Id">
         <input type="text" id="email" class="fadeIn third" name="email" placeholder="Email">
-        <input type="password" id="password" class="fadeIn fourth" name="login" placeholder="Password">
+        <input type="password" id="password" class="fadeIn fourth" name="password" placeholder="Password">
         <input type="submit" class="fadeIn fourth" value="Sign up">
       </form>
 

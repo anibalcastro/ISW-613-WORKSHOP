@@ -75,3 +75,11 @@ function getUsers(){
   $users = $result->fetch_all(MYSQLI_ASSOC);
   return $users;
 }
+
+function createUser($name, $identificacion,$email, $password)
+{
+  $connection = mysqli_connect('127.0.0.1','root','','workshop4');
+  
+  $sql = "INSERT INTO `users`( `name`, `email`, `contrasenna`) VALUES ('$name','$identificacion','$email',$password);";
+  echo "$sql";
+}
