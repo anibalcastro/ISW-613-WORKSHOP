@@ -34,7 +34,7 @@ $users = getUsers();
       <p class="lead">Proceso de matricula</p>
       <hr class="my-4">
     </div>
-    <a href="/matricula.php">Ver todas</a>
+    <a href="http://utnweb.com/web2/ISW-613-WORKSHOP/Workshop4/matricula.php">Ver todas</a>
     <form method="post" action="matricular.php">
     
     <div class="form-group">
