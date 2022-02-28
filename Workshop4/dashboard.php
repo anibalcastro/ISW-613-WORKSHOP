@@ -33,6 +33,9 @@ $users = getUsers();
       <h1 class="display-4">Matricula</h1>
       <p class="lead">Proceso de matricula</p>
       <hr class="my-4">
+      <form action="logout.php" method="post">
+        <button type="submit" class="btn btn-danger">Log out</button>
+      </form>
     </div>
     <a href="http://utnweb.com/web2/ISW-613-WORKSHOP/Workshop4/matricula.php">Ver todas</a>
     <form method="post" action="matricular.php">
@@ -62,7 +65,7 @@ $users = getUsers();
         </select>
       </div>
 
-      <button type="submit" class="btn btn-primary"> Matricular </button>
+      <button type="submit" class="btn btn-primary"> Register </button>
 
     </form>
   </div>
