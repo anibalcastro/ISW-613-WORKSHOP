@@ -27,10 +27,10 @@
 
       <!-- Login Form -->
       <form action="registrar.php" method="POST">
-        <input type="text" id="name" class="fadeIn first" name="name" placeholder="Complete name">
-        <input type="text" id="id" class="fadeIn second" name="id" placeholder="Id">
-        <input type="text" id="email" class="fadeIn third" name="email" placeholder="Email">
-        <input type="password" id="password" class="fadeIn fourth" name="password" placeholder="Password">
+        <input type="text" id="nameUser" class="fadeIn first" name="nameU" placeholder="Complete name">
+        <input type="text" id="idUser" class="fadeIn second" name="idU" placeholder="Id">
+        <input type="text" id="emailUser" class="fadeIn third" name="emailU" placeholder="Email">
+        <input type="password" id="passwordUser" class="fadeIn fourth" name="passwordU" placeholder="Password">
         <input type="submit" class="fadeIn fourth" value="Sign up">
       </form>
 

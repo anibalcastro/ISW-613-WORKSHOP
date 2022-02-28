@@ -1,13 +1,13 @@
 <?php
-    require('functions.php');
+    require ('functions.php');
 
     if ($_POST) {
-        $name = $_REQUEST('name');
-        $id = $_REQUEST('id');
-        $email = $_REQUEST('email');
-        $password = $_REQUEST('password');
+        $nombre = $_REQUEST['nameU'];
+        $identificacion = $_REQUEST['idU'];    
+        $email = $_REQUEST['emailU'];
+        $password = $_REQUEST['passwordU'];
 
-        createUser($name,$id,$email,$password);
+        createUser($nombre, $identificacion, $email, $password);
     }
       
 ?>
