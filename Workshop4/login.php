@@ -1,5 +1,5 @@
 <?php
-  require('function.php');
+  require('functions.php');
 
   if ($_POST) {
 
@@ -8,6 +8,7 @@
 
     $usuario = authenticate($email, $password);
 
+    //si existe usuario, inicie sesión
     if ($usuario){
       session_start();
       $_SESSION['user'] = $usuario;

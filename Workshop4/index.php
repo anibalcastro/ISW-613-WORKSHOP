@@ -48,9 +48,9 @@
       </div>
 
       <!-- Login Form -->
-      <form>
+      <form action="login.php" method="POST">
         <input type="text" id="email" class="fadeIn second" name="email" placeholder="Email">
-        <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password">
+        <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
         <input type="submit" class="fadeIn fourth" value="Log In">
       </form>
 

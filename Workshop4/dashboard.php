@@ -1,10 +1,19 @@
 <?php
 
+session_start();
+$user = $_SESSION['user'];
+
+if (!$user) {
+  header('Location: index.php');
+}
+
 require('functions.php');
 
 
 $carreras = getCarreras();
 $users = getUsers();
+
+
 
 ?>
 
