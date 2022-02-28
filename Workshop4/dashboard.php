@@ -7,6 +7,11 @@ if (!$user) {
   header('Location: index.php');
 }
 
+$nombreUsuario = "";
+  if(!empty($_REQUEST['status'])) {
+    $nombreUsuario = $_REQUEST['message'];
+  }
+
 require('functions.php');
 
 
@@ -32,6 +37,8 @@ $users = getUsers();
     <div class="jumbotron">
       <h1 class="display-4">Matricula</h1>
       <p class="lead">Proceso de matricula</p>
+      <?php echo "<p class='lead'>Bienvenido $nombreUsuario</p>" ?>
+
       <hr class="my-4">
       <form action="logout.php" method="post">
         <button type="submit" class="btn btn-danger">Log out</button>

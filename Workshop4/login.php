@@ -12,7 +12,8 @@
     if ($usuario){
       session_start();
       $_SESSION['user'] = $usuario;
-      header('Location: http://utnweb.com/web2/ISW-613-WORKSHOP/Workshop4/dashboard.php');
+      $url = "http://utnweb.com/web2/ISW-613-WORKSHOP/Workshop4/dashboard.php?status=success&message=".$usuario;
+      header("Location: $url");
     }
     else{
       header('Location: http://utnweb.com/web2/ISW-613-WORKSHOP/Workshop4/index.php?status=login');
