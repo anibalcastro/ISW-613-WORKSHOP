@@ -30,7 +30,7 @@ $matriculas = getMatriculas();
       <hr class="my-4">
     </div>
 
-    <a href="/dashboard.php">Nuevo</a>
+    <a href="http://utnweb.com/web2/ISW-613-WORKSHOP/Workshop4/dashboard.php">Nuevo</a>
     <table class="table table-light">
       <tr>
         <th>Id</th>
