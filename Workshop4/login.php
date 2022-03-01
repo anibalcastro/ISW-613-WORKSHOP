@@ -26,7 +26,7 @@
         header("Location: $urlAdmin");
       }
       else{
-        $urlEstudiante = "http://utnweb.com/web2/ISW-613-WORKSHOP/Workshop4/estudiante/bienvenida.php?status=success&message=".$nombre;
+        $urlEstudiante = "http://utnweb.com/web2/ISW-613-WORKSHOP/Workshop4/bienvenida.php?status=success&message=".$nombre;
         header("Location: $urlEstudiante");
       }
 
