@@ -7,7 +7,7 @@ ksort($ceu);
 
 //Imprimo de forma ascendente
 foreach($ceu as $country =>$capital){
-    echo "The capital of $country is  $capital". PHP_EOL;
+    echo "The capital of $country is $capital". PHP_EOL;
 }
 
 
