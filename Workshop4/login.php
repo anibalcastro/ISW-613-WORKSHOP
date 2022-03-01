@@ -7,23 +7,26 @@
     $password = $_REQUEST['password'];
 
     $usuario = authenticate($email, $password);
-    print_r($usuario);
-    die;
+    //Nombre
+    $nombre = $usuario[0];
+    //Rol
+    $rol = $usuario[1];
+    //Resultado
+    $resultado = $usuario[2];
 
     //si existe usuario, inicie sesión
-    if ($usuario){
-      //session_start();
-    
-  
-      die;
-      $_SESSION['user'] = $usuario;
+    if ($resultado){
+      //inicia sesión
+      session_start();
+      
+      $_SESSION['user'] = $nombre;
 
-      if ($iterar["rol"] == 1){
-        $urlAdmin = "http://utnweb.com/web2/ISW-613-WORKSHOP/Workshop4/dashboard.php?status=success&message=".$name;
+      if ($rol == 1){
+        $urlAdmin = "http://utnweb.com/web2/ISW-613-WORKSHOP/Workshop4/dashboard.php?status=success&message=".$nombre;
         header("Location: $urlAdmin");
       }
       else{
-        $urlEstudiante = "http://utnweb.com/web2/ISW-613-WORKSHOP/Workshop4/estudiante/bienvenida.php?status=success&message=".$name;
+        $urlEstudiante = "http://utnweb.com/web2/ISW-613-WORKSHOP/Workshop4/estudiante/bienvenida.php?status=success&message=".$nombre;
         header("Location: $urlEstudiante");
       }
 

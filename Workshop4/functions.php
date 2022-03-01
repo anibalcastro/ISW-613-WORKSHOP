@@ -66,11 +66,7 @@ function authenticate($email, $password){
     //rol
     $rol = $iterador["rol"];
     
-    $arrayInfo = [
-      "nombre" => $nombreCompleto,
-      "rol" => $rol,
-      "resultado" => $result
-    ];
+    $arrayInfo = array($nombreCompleto, $rol, $result);
 
     return $arrayInfo;
   }
