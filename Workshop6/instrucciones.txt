@@ -1,0 +1,7 @@
+Usando OOP con PHP, construya una página de matricula en la que:
+
+1. Se muestre un listado de las carreras existentes en una tabla de la base de datos (Id, Código, Nombre de Carrera) (en un Select de HTML)
+
+2. La matricula debe guardarse con los datos del formulario (Cedula, Nombre, Apellidos, Correo Electrónico y ID de la carrera seleccionada), adicionalmente debera incluir en el registro la fecha de matricula que corresponde al dia en que se creó el registro. 
+
+3. En otrá pagina PHP se mostrarán las matriculas realizadas (Nombre, Apellidos, Correo Electrónico, Nombre de la Carrera). 
