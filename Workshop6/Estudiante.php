@@ -15,18 +15,30 @@ class Estudiante extends Persona{
 
     public function saveData()
     {
-      return Persona::saveData()."{$this->idCarrera},'{$this->fechaMatricula}');";      
+      return Persona::saveData().",{$this->idCarrera},'{$this->fechaMatricula}');";      
     }
 
-    public function createEstudent(){
+    public function conexion(){
+        return mysqli_connect('127.0.0.1','root','','workshop6');
+    }
+
+    public function createMatricula(){
         try {
-            $connection = mysqli_connect('127.0.0.1','root','','workshop4');      
-            $sqlInsert = "INSERT INTO `matricula`(`id`, `nombre`, `apellido`, `correoElectronico`, `idCarrera`) VALUES ".Persona::saveData()."{$this->idCarrera},'{$this->fechaMatricula}');";
+            $connection = Estudiante::conexion();      
+            $sqlInsert = "INSERT INTO `matricula`(`nombre`, `apellido`,`cedula`, `correoElectronico`, `idCarrera`, `fecha`) VALUES ".Estudiante::saveData();
             mysqli_query($connection, $sqlInsert);
-        } catch (\Throwable $th) {
-            //throw $th;
+            return $sqlInsert;
+        } catch (Exception $th) {
+            return $th->getMessage();
         }
         
+    }
+
+    public function getMatriculas(){
+        $connection = Estudiante::conexion();
+        $sqlGet = "SELECT matricula.id, nombre, apellido, cedula, correoElectronico, carreras.name as carrera FROM `matricula` INNER JOIN carreras ON matricula.idCarrera = carreras.id;";
+        $result = mysqli_query($connection, $sqlGet);
+        return $result->fetch_all();
     }
 
  
