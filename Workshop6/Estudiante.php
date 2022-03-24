@@ -36,7 +36,7 @@ class Estudiante extends Persona{
 
     public function getMatriculas(){
         $connection = Estudiante::conexion();
-        $sqlGet = "SELECT matricula.id, nombre, apellido, cedula, correoElectronico, carreras.name as carrera FROM `matricula` INNER JOIN carreras ON matricula.idCarrera = carreras.id;";
+        $sqlGet = "SELECT matricula.id, nombre, apellido, cedula, correoElectronico, carreras.name as carrera, fecha FROM `matricula` INNER JOIN carreras ON matricula.idCarrera = carreras.id;";
         $result = mysqli_query($connection, $sqlGet);
         return $result->fetch_all();
     }
