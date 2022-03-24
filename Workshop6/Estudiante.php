@@ -7,7 +7,7 @@ class Estudiante extends Persona{
     public  $fechaMatricula;
 
 
-    function __construct($nombre, $apellidos, $cedula, $correoElectronico,  $idCar, $fechaMat){
+    function __construct($nombre = "", $apellidos="", $cedula="", $correoElectronico="",  $idCar="", $fechaMat=""){
         $this-> idCarrera = $idCar;
         $this-> fechaMatricula = $fechaMat;
         parent::__construct($nombre, $apellidos, $cedula, $correoElectronico);
