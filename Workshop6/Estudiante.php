@@ -13,15 +13,25 @@ class Estudiante extends Persona{
         parent::__construct($nombre, $apellidos, $cedula, $correoElectronico);
     }
 
+    /**
+     * Contiene toda la informacion
+     */
     public function saveData()
     {
       return Persona::saveData().",{$this->idCarrera},'{$this->fechaMatricula}');";      
     }
 
-    public function conexion(){
+    /**
+     * Establece conexion
+     */
+    public function conexion()
+    {
         return mysqli_connect('127.0.0.1','root','','workshop6');
     }
 
+    /**
+     * Crea matriculas 
+     */
     public function createMatricula(){
         try {
             $connection = Estudiante::conexion();      
@@ -34,6 +44,9 @@ class Estudiante extends Persona{
         
     }
 
+    /**
+     * Obtiene matriculas
+     */
     public function getMatriculas(){
         $connection = Estudiante::conexion();
         $sqlGet = "SELECT matricula.id, nombre, apellido, cedula, correoElectronico, carreras.name as carrera, fecha FROM `matricula` INNER JOIN carreras ON matricula.idCarrera = carreras.id;";
@@ -41,5 +54,15 @@ class Estudiante extends Persona{
         return $result->fetch_all();
     }
 
+    /*
+    public function getCarreras()
+    {
+        $connection = Estudiante::conexion();
+        $sqlCarreras = "SELECT * FROM `carreras`;";
+        $result = mysqli_query($connection, $sqlCarreras);
+
+        return $result->fetch_all();
+    }
+    */
  
 }

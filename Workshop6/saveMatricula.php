@@ -18,5 +18,7 @@ if (!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['ced
     $nuevoEstudiante = new Estudiante($nombre,$apellido,$cedula,$correo,$idCarrera,$dateTime);
     $nuevoEstudiante->createMatricula();
     header('Location: list.php');
-
+}
+else {
+    header('Location: index.php');
 }

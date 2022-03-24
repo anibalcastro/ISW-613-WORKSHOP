@@ -32,7 +32,6 @@ class Persona
         return $this-$id;
     }
 
-    
     public function saveData()
     {
        return "('{$this->nombre}', '{$this->apellido}', '{$this->cedula}', '{$this->correoElectronico}'";

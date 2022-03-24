@@ -65,7 +65,7 @@ $matriculas = $datos->getMatriculas();
         </tbody>
     </table>  
     
-    <a href="" type="button" class="btn btn-primary">Regresar</a>
+    <a href="http://utnweb.com/web2/ISW-613-WORKSHOP/Workshop6/index.php" type="button" class="btn btn-primary">Regresar</a>
 
 </body>
 </html>
